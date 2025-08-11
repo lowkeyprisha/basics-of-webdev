@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="fstyle.css">
+</head>
+<body>
+
+    <header>
+        <h1 style="color:blanchedalmond;  ">&#9992;JETSET FLY&#9992;</h1>
+    </header>
+
+    <main>
+        <section id="trips">
+            <h2>We have the following available trips</h2>
+            <div class="trip-list">
+                <div class="trip-card">
+                    <h3>Paris</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsMLJkLiQ-68RorOeIArowF4lYp-zzBbpqwQ&s" height="200" width="200">
+                    <p>Price: ₹70,000 per person</p>
+                    <button onclick="showBookingForm('Paris', 70000)">Book Now</button>
+                </div>
+                <div class="trip-card">
+                    <h3>Maldives</h3>
+                    <img src="https://cdn.forevervacation.com/uploads/blog/everything-you-need-to-know-about-the-maldives-the-vacationer-by-forevervacation-2003.jpeg"height="200" width="200">
+                    <p>Price: ₹40,000 per person</p>
+                    <button onclick="showBookingForm('Maldives', 40000)">Book Now</button>
+                </div>
+                <div class="trip-card">
+                    <h3>Tokyo</h3>
+                    <img src="https://www.hilton.com/im/en/NoHotel/19361896/shutterstock-667925704.jpg?impolicy=crop&cw=3800&ch=2533&gravity=NorthWest&xposition=0&yposition=1&rw=1280&rh=856"height="200" width="200">
+                    <p>Price: ₹80,000 per person</p>
+                    <button onclick="showBookingForm('Tokyo', 80000)">Book Now</button>
+                </div>
+                <div class="trip-card">
+                    <h3>Dubai</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Burj_Khalifa_2021.jpg/960px-Burj_Khalifa_2021.jpg"height="200" width="200">
+                    <p>Price: ₹30,000 per person</p>
+                    <button onclick="showBookingForm('Dubai', 30000)">Book Now</button>
+                </div>
+                <div class="trip-card">
+                    <h3>New York</h3>
+                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/bd/6f/17.jpg"height="200" width="200">
+                    <p>Price: ₹90,000 per person</p>
+                    <button onclick="showBookingForm('New York', 90000)">Book Now</button>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="booking-form" class="hidden">
+            <h2>Book Your Trip</h2>
+            <form onsubmit="confirmBooking(event)">
+                <label>Name:</label>
+                <input type="text" id="name" required>
+
+                <label>Email:</label>
+                <input type="email" id="email" required>
+
+                <label>Number of People:</label>
+                <input type="number" id="people" min="1" value="1" required>
+
+                <label>Date:</label>
+                <input type="date" id="date" required>
+
+                <input type="hidden" id="selectedPlace">
+                <input type="hidden" id="pricePerPerson">
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+
+        <section id="confirmation" class="hidden"></section>
+    </main>
+
+    <script src="fscript.js"></script>
+</body>
+</html>
